@@ -13,7 +13,7 @@ export const fetchChatrooms = () => {
         const token = getState().user.idToken;
 
         const response = await fetch(
-            'https://cbscs-7a227-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth=' + token, {
+            'https://reactexamludvig-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth=' + token, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export const fetchChatrooms = () => {
 
             dispatch({ type: 'FETCH_CHATROOMS', payload: chatrooms })
         }
-    };
+    };  
 }
 
 export const addChatroom = (chatroom: Chatroom) => {
@@ -52,7 +52,7 @@ export const addChatroom = (chatroom: Chatroom) => {
 
         //delete chatroom.id // for an update, this would remove the id attribute (and value) from the chatroom
         const response = await fetch(
-            'https://cbscs-7a227-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth=' + token, {
+            'https://reactexamludvig-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth=' + token, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
