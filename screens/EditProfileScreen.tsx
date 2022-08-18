@@ -21,14 +21,12 @@ export default function EditProfileScreen() {
     return (
         <View style={styles.container}>
             <Text>Edit Profile Screen</Text>
-            <Input title="What is your email?"
+            <Input title="Type new email"
                 inputValue={textEmail}
                 setText={setTextEmail}
                 error="Email cannot be empty"
+                
             />
-            {/* <Input title="Study programme"
-                inputValue=""
-                error="Study programme cannot be empty" /> */}
 
             <Button title="Save" onPress={() => console.log("hi")} />
         </View>
@@ -42,4 +40,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    input: {
+        padding: 15,
+        borderColor: 'rgba(0, 0, 0, 0.2)',
+        borderWidth: 1,
+        borderRadius: 5,
+        marginBottom: 20,
+      },
 })

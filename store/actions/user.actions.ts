@@ -41,16 +41,11 @@ export const signup = (email: string, password: string) => {
 
         if (!response.ok) {
             console.log("its not working");
-            //There was a problem..
-            //dispatch({type: SIGNUP_FAILED, payload: 'something'})
         } else {
             const data: FirebaseSignupSuccess = await response.json(); // json to javascript
             console.log("data from server", data);
 
             const user = new User(data.email, '', '');
-
-            // await SecureStore.setItemAsync('idToken', data.idToken);
-            // await SecureStore.setItemAsync('user', JSON.stringify(user)); // convert user js-obj. to json
 
             dispatch({ type: SIGNUP, payload: { user, idToken: data.idToken } })
         }
@@ -79,16 +74,11 @@ export const login = (email: string, password: string) => {
 
         if (!response.ok) {
             console.log("its not working");
-            //There was a problem..
-            //dispatch({type: SIGNUP_FAILED, payload: 'something'})
         } else {
             const data: FirebaseSignupSuccess = await response.json(); // json to javascript
             console.log("data from server", data);
 
             const user = new User(data.email, '', '');
-
-            // await SecureStore.setItemAsync('idToken', data.idToken);
-            // await SecureStore.setItemAsync('user', JSON.stringify(user)); // convert user js-obj. to json
 
             dispatch({ type: LOGIN, payload: { user, idToken: data.idToken } })
         }
